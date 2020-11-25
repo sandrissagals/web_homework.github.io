@@ -75,21 +75,15 @@
     <form>
 
       <fieldset class="form-group">
-        <legend>Your Info</legend>
 
         <div class="form-group">
-          <label class="form-control-label" for="name">Name</label>
-          <input class="form-control" type="text" id="name" placeholder="Your Name">
+          <label class="form-control-label" for="username">Username</label>
+          <input <input pattern="[a-zA-Z]+" oninvalid="setCustomValidity('Please enter on alphabets only. ')" class="form-control" type="text" id="username" placeholder="Your Username" required>
         </div><!-- form-group -->
 
         <div class="form-group">
-          <label class="form-control-label" for="owneremail">Email</label>
-          <input class="form-control" type="text" id="owneremail" placeholder="Address">
-        </div><!-- form-group -->
-
-        <div class="form-group">
-          <label class="form-control-label" for="donationamt">Donation Amount</label>
-          <input type="text" class="form-control" id="donationamt" placeholder="Amount">
+          <label for="pwd">Password:</label><br>
+          <input class="form-control" type="password" id="pwd" placeholder="Password" minlength="8" required>
         </div><!-- form-group -->
 
         <button class="btn btn-primary" type="submit">Submit</button>
@@ -103,22 +97,22 @@
     <form>
 
       <fieldset class="form-group">
-        <legend>Your Info</legend>
 
         <div class="form-group">
-          <label class="form-control-label" for="name">Name</label>
-          <input class="form-control" type="text" id="name" placeholder="Your Name">
+          <label class="form-control-label" for="username">Username</label>
+          <input pattern="[a-zA-Z]+" oninvalid="setCustomValidity('Please enter on alphabets only. ')" class="form-control" type="text" id="username" placeholder="Your Username" required>
+        </div><!-- form-group -->
+
+        <div class="form-group">
+          <label for="pwd">Password:</label><br>
+          <input class="form-control" type="password" id="pwd" placeholder="Password" minlength="8" required>
         </div><!-- form-group -->
 
         <div class="form-group">
           <label class="form-control-label" for="owneremail">Email</label>
-          <input class="form-control" type="text" id="owneremail" placeholder="Address">
+          <input class="form-control" type="email" id="owneremail" placeholder="Address" required>
         </div><!-- form-group -->
 
-        <div class="form-group">
-          <label class="form-control-label" for="donationamt">Donation Amount</label>
-          <input type="text" class="form-control" id="donationamt" placeholder="Amount">
-        </div><!-- form-group -->
 
         <button class="btn btn-primary" type="submit">Submit</button>
 
