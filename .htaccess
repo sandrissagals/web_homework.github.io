@@ -1,24 +1,20 @@
-RewriteEngine on
-# Force hide file extensions
-RewriteCond %{REQUEST_FILENAME} !-d 
-RewriteCond %{REQUEST_FILENAME}\.php -f
-RewriteRule ^(.*)$ $1.php
+##
+# Apache .htaccess template
+##
 
-#RewriteCond %{REQUEST_FILENAME} !-d
-#RewriteCond %{REQUEST_FILENAME}\.html -f
-#RewriteRule ^(.*)$ $1.html
+## Protect files and directories from prying eyes.
+<FilesMatch ".(make|test|md|po|sh|.sql|.bson|tpl(.php)?|svn-base)$|^(code-style.pl|Entries.*|Repository|Root|Tag|Template|all-wcprops|entries|format)$">
+  Order allow,deny
+</FilesMatch>
 
-# Force www:
-RewriteCond %{HTTP_HOST} ^bt.local [NC]
-RewriteRule ^(.*)$ http://www.bt.local/$1 [L,R=301,NC]
+## Don't show directory listings for URLs which map to a directory.
+Options -Indexes
 
+## Follow symbolic links in this directory.
+Options +FollowSymLinks
+
+## ERROR 404
 ErrorDocument 404 /errors/notfound.php
 
-
-#Serve .htc files correctly, for IE fixes
-AddType text/x-component .htc
-
-php_value upload_max_filesize 10M
-php_value post_max_size 10M
-php_value max_execution_time 200
-php_value max_input_time 200
+## End of file .htaccess ##
+## Location: ./.htaccess ##
