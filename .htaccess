@@ -1,0 +1,24 @@
+RewriteEngine on
+# Force hide file extensions
+RewriteCond %{REQUEST_FILENAME} !-d 
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php
+
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteCond %{REQUEST_FILENAME}\.html -f
+#RewriteRule ^(.*)$ $1.html
+
+# Force www:
+RewriteCond %{HTTP_HOST} ^bt.local [NC]
+RewriteRule ^(.*)$ http://www.bt.local/$1 [L,R=301,NC]
+
+ErrorDocument 404 /errors/notfound.php
+
+
+#Serve .htc files correctly, for IE fixes
+AddType text/x-component .htc
+
+php_value upload_max_filesize 10M
+php_value post_max_size 10M
+php_value max_execution_time 200
+php_value max_input_time 200
